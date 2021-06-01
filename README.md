@@ -26,3 +26,7 @@ Added to TaskQueue: {compile: B.o <= B.swift}
 C.FooBar (internal):3:14: note: 'init()' declared here
     internal init()
 ```
+
+## Swift 5.5
+
+This looks to be fixed in the Swift 5.5 toolchain. Running `./repo-bug.sh TOOLCHAINID` (where `TOOLCHAINID` is at least `org.swift.55202105301a`) correctly produces a compilation error on the third run.
