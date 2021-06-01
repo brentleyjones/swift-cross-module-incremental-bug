@@ -1,5 +1,12 @@
 #!/bin/bash
 
+readonly toolchain="${1:-}"
+if [[ -n "$toolchain" ]]; then
+  export TOOLCHAINS="$toolchain"
+fi
+swift --version
+echo
+
 temp_dir="$(mktemp -d)"
 echo "temp_dir: $temp_dir"
 
@@ -29,7 +36,12 @@ for i in 1 2 3; do
     cp "$f" "$filename"
   done
 
-  extra_flags=( -enable-experimental-cross-module-incremental-build -driver-show-incremental -driver-show-job-lifecycle -incremental )
+  extra_flags=( -driver-show-incremental -driver-show-job-lifecycle -incremental )
+  if [[ -n "$toolchain" ]]; then
+    extra_flags+=( -enable-incremental-imports )
+  else
+    extra_flags+=( -enable-experimental-cross-module-incremental-build  )
+  fi
 
   echo
   echo "* Compiling C *"
