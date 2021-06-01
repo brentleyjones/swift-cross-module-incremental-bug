@@ -1,0 +1,11 @@
+{
+  "A.swift": {
+    "object": "./A.o",
+    "swift-dependencies": "./A~partial.swiftdeps",
+    "swiftmodule": "./A~partial.swiftmodule",
+    "swiftdoc": "./A~partial.swiftdoc"
+  },
+  "": {
+    "swift-dependencies": "./A~buildrecord.swiftdeps"
+  }
+}

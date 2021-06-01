@@ -1,0 +1,17 @@
+{
+  "C.swift": {
+    "object": "./C.o",
+    "swift-dependencies": "./C~partial.swiftdeps",
+    "swiftmodule": "./C~partial.swiftmodule",
+    "swiftdoc": "./C~partial.swiftdoc"
+  },
+  "C_changing.swift": {
+    "object": "./C_unused.o",
+    "swift-dependencies": "./C_unused~partial.swiftdeps",
+    "swiftmodule": "./C_unused~partial.swiftmodule",
+    "swiftdoc": "./C_unused~partial.swiftdoc"
+  },
+  "": {
+    "swift-dependencies": "./C~buildrecord.swiftdeps"
+  }
+}
